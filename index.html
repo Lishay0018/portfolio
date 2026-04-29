@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alishba Zafar | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<!-- ADD THIS INSIDE <head> AFTER GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+
+/* ================= ROOT COLORS ================= */
+
+:root{
+  --bg1:#0f172a;
+  --bg2:#1e293b;
+  --bg3:#312e81;
+
+  --white:#ffffff;
+  --soft:#cbd5e1;
+
+  --pink:#ff4ecd;
+  --purple:#7c4dff;
+  --cyan:#00e5ff;
+
+  --glass:rgba(255,255,255,0.08);
+  --glass-border:rgba(255,255,255,0.12);
+
+  --shadow:0 8px 32px rgba(0,0,0,0.35);
+}
+
+/* ================= GLOBAL ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Outfit',sans-serif;
+  color:white;
+
+  background:
+  radial-gradient(circle at top left,#ff4ecd22,transparent 30%),
+  radial-gradient(circle at bottom right,#7c4dff22,transparent 30%),
+  linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+
+  overflow-x:hidden;
+  min-height:100vh;
+  position:relative;
+}
+
+/* ================= FLOATING BUBBLES ================= */
+
+body::before,
+body::after{
+  content:'';
+  position:fixed;
+  width:500px;
+  height:500px;
+  border-radius:50%;
+  filter:blur(90px);
+  z-index:-1;
+  animation:floatBubble 10s ease-in-out infinite alternate;
+}
+
+body::before{
+  background:#ff4ecd33;
+  top:-150px;
+  left:-120px;
+}
+
+body::after{
+  background:#7c4dff33;
+  bottom:-180px;
+  right:-120px;
+}
+
+@keyframes floatBubble{
+  from{
+    transform:translateY(0px);
+  }
+
+  to{
+    transform:translateY(40px);
+  }
+}
+/* ================= PERFECT SECTION TITLES ================= */
+
+.section-title{
+
+  text-align:center;
+
+  font-size:3.4rem;
+
+  font-weight:800;
+
+  margin-bottom:70px;
+
+  position:relative;
+
+  width:fit-content;
+
+  margin-left:auto;
+  margin-right:auto;
+
+  background:linear-gradient(
+  45deg,
+  #ff4ecd,
+  #00e5ff);
+
+  background-clip:text;
+  -webkit-background-clip:text;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+
+/* LINE */
+
+.section-title::after{
+
+  content:'';
+
+  position:absolute;
+
+  left:50%;
+  transform:translateX(-50%);
+
+  bottom:-18px;
+
+  width:110px;
+  height:5px;
+
+  border-radius:30px;
+
+  background:linear-gradient(
+  90deg,
+  #ff4ecd,
+  #00e5ff);
+
+  box-shadow:
+  0 0 20px rgba(255,78,205,0.4);
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+/* ================= FIXED FULL HEADER ================= */
+
+.header{
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  padding:20px 70px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  background:rgba(15,23,42,0.65);
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(255,255,255,0.08);
+
+  z-index:1000;
+
+  box-shadow:
+  0 8px 30px rgba(0,0,0,0.25);
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+  font-size:2.4rem;
+  font-weight:800;
+
+  background:linear-gradient(
+  45deg,
+  var(--pink),
+  var(--cyan));
+
+  background-clip:text;
+  -webkit-background-clip:text;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ================= NAVBAR ================= */
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:2.5rem;
+  list-style:none;
+    gap:3rem;  /* 👈 links ke darmiyan space increase */
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+
+  font-size:1.15rem;
+  font-weight:600;
+
+  position:relative;
+
+  transition:0.3s;
+    font-size:1.5rem;   /* 👈 text bigger */
+  font-weight:700;    /* 👈 bold look */
+}
+
+.nav-links a:hover{
+  color:var(--cyan);
+}
+
+.nav-links a::after{
+  content:'';
+
+  position:absolute;
+  left:0;
+  bottom:-6px;
+
+  width:0%;
+  height:2px;
+
+  background:linear-gradient(
+  90deg,
+  var(--pink),
+  var(--cyan));
+
+  transition:0.4s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding-top:120px;
+}
+
+.hero-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:5rem;
+}
+
+/* ================= HERO TEXT ================= */
+
+.hero-text{
+  flex:1;
+}
+
+.hero-text h2{
+  font-size:5rem;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.hero-text span{
+  background:linear-gradient(
+  45deg,
+  var(--pink),
+  var(--cyan));
+
+  background-clip:text;
+  -webkit-background-clip:text;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+  font-size:1.5rem;
+  color:var(--soft);
+  margin-bottom:30px;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.social-links{
+  margin-bottom:30px;
+}
+
+.social-links a{
+  width:55px;
+  height:55px;
+
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+
+  margin-right:15px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,0.08);
+
+  color:white;
+  font-size:1.3rem;
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  transition:0.4s;
+}
+
+.social-links a:hover{
+  transform:translateY(-8px) scale(1.08);
+
+  background:linear-gradient(
+  45deg,
+  var(--pink),
+  var(--purple));
+}
+
+/* ================= BUTTON ================= */
+
+.hero-btn{
+  display:inline-block;
+
+  padding:15px 35px;
+
+  border-radius:50px;
+
+  text-decoration:none;
+  color:white;
+
+  font-weight:600;
+  font-size:1rem;
+
+  background:linear-gradient(
+  45deg,
+  var(--pink),
+  var(--purple));
+
+  box-shadow:0 10px 25px rgba(255,78,205,0.35);
+
+  transition:0.4s;
+}
+
+.hero-btn:hover{
+  transform:translateY(-6px);
+
+  box-shadow:0 15px 35px rgba(255,78,205,0.5);
+}
+
+/* ================= HERO IMAGE ================= */
+
+.hero-img{
+  flex:1;
+
+  display:flex;
+  justify-content:center;
+
+  position:relative;
+}
+
+/* GLOW */
+
+.hero-img::before{
+  content:'';
+
+  position:absolute;
+
+  width:350px;
+  height:350px;
+
+  border-radius:50%;
+
+  background:linear-gradient(
+  45deg,
+  var(--pink),
+  var(--purple),
+  var(--cyan));
+
+  filter:blur(80px);
+
+  z-index:-1;
+
+  animation:glowMove 5s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove{
+  from{
+    transform:scale(1);
+  }
+
+  to{
+    transform:scale(1.15);
+  }
+}
+
+.hero-img img{
+
+  width:400px;
+
+  position:relative;
+
+  z-index:2;
+
+  animation:
+  floatImage 4s ease-in-out infinite;
+
+  filter:
+  drop-shadow(0 0 30px rgba(255,78,205,0.4));
+}
+/* ================= ANIMATED PROFILE ================= */
+
+.animated-circle{
+
+  position:absolute;
+
+  width:450px;
+  height:450px;
+
+  border-radius:50%;
+
+  border:3px dashed rgba(255,255,255,0.2);
+
+  animation:rotateCircle 18s linear infinite;
+}
+
+/* ROTATION */
+
+@keyframes rotateCircle{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+}
+.hero-img img:hover{
+  transform:scale(1.04);
+}
+
+@keyframes floatImage{
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-18px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+  padding:100px 0;
+}
+
+.section-title{
+  text-align:center;
+  font-size:3rem;
+  margin-bottom:60px;
+  position:relative;
+}
+
+.section-title::after{
+  content:'';
+
+  position:absolute;
+
+  left:50%;
+  transform:translateX(-50%);
+
+  bottom:-15px;
+
+  width:90px;
+  height:5px;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+  90deg,
+  var(--pink),
+  var(--cyan));
+}
+.section h2{
+  font-size:3.6rem;
+  font-weight:800;
+  margin-bottom:60px;
+  color:white;
+  text-shadow:0 0 20px rgba(255,78,205,0.5);
+
+  text-align: center;
+  width: 100%;
+}
+/* ================= BEAUTIFUL BUBBLY ABOUT SECTION ================= */
+
+.about-text{
+  max-width:1000px;
+  margin:auto;
+
+  position:relative;
+
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+
+/* FLOATING BUBBLES */
+
+.about-text::before,
+.about-text::after{
+  content:'';
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(70px);
+
+  z-index:-1;
+
+  animation:floatAbout 6s ease-in-out infinite alternate;
+}
+
+.about-text::before{
+  width:220px;
+  height:220px;
+
+  background:#ff4ecd35;
+
+  top:-60px;
+  left:-80px;
+}
+
+.about-text::after{
+  width:260px;
+  height:260px;
+
+  background:#00e5ff25;
+
+  bottom:-80px;
+  right:-90px;
+}
+
+@keyframes floatAbout{
+
+  from{
+    transform:translateY(0px);
+  }
+
+  to{
+    transform:translateY(30px);
+  }
+}
+
+/* ABOUT CARDS */
+
+.about-text p{
+
+  position:relative;
+
+  padding:35px;
+
+  border-radius:35px;
+
+  background:rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  box-shadow:
+  0 10px 35px rgba(0,0,0,0.25);
+
+  line-height:2;
+  font-size:1.15rem;
+
+  color:#f1f5f9;
+
+  overflow:hidden;
+
+  transition:0.5s ease;
+}
+
+/* TOP GLOW LINE */
+
+.about-text p::before{
+  content:'';
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:4px;
+
+  background:linear-gradient(
+  90deg,
+  #ff4ecd,
+  #7c4dff,
+  #00e5ff);
+}
+
+/* SHINY EFFECT */
+
+.about-text p::after{
+  content:'';
+
+  position:absolute;
+
+  top:-120%;
+  left:-40%;
+
+  width:120px;
+  height:300%;
+
+  background:rgba(255,255,255,0.08);
+
+  transform:rotate(25deg);
+
+  transition:0.7s;
+}
+
+.about-text p:hover::after{
+  left:120%;
+}
+
+/* HOVER EFFECT */
+
+.about-text p:hover{
+
+  transform:
+  translateY(-10px)
+  scale(1.02);
+
+  background:rgba(255,255,255,0.1);
+
+  box-shadow:
+  0 15px 45px rgba(255,78,205,0.15),
+  0 15px 50px rgba(0,0,0,0.35);
+}
+
+/* SMALL FLOATING DOTS */
+
+.about-text p span{
+  color:#00e5ff;
+  font-weight:600;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .about-text p{
+    padding:25px;
+    font-size:1rem;
+    line-height:1.8;
+  }
+}
+
+/* ================= SKILLS ================= */
+
+.skills-wrapper{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.skill-box{
+  padding:30px;
+
+  border-radius:30px;
+
+  background:var(--glass);
+
+  backdrop-filter:blur(18px);
+
+  border:1px solid var(--glass-border);
+
+  box-shadow:var(--shadow);
+
+  transition:0.4s;
+}
+
+.skill-box:hover{
+  transform:translateY(-10px);
+}
+
+.skill-box h3{
+  margin-bottom:20px;
+  font-size:1.4rem;
+}
+
+.skill{
+  margin-bottom:18px;
+}
+
+.bar{
+  height:12px;
+  background:rgba(255,255,255,0.08);
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  margin-top:8px;
+}
+
+.bar div{
+  height:100%;
+
+  border-radius:20px;
+
+  background:linear-gradient(
+  90deg,
+  var(--pink),
+  var(--cyan));
+
+  animation:loadBar 2s ease;
+}
+
+@keyframes loadBar{
+  from{
+    width:0;
+  }
+}
+
+/* ================= PROJECTS ================= */
+
+.project-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.project{
+  padding:30px;
+
+  border-radius:30px;
+
+  background:var(--glass);
+
+  backdrop-filter:blur(18px);
+
+  border:1px solid var(--glass-border);
+
+  transition:0.5s;
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+.project::before{
+  content:'';
+
+  position:absolute;
+  inset:0;
+
+  background:linear-gradient(
+  135deg,
+  #ff4ecd22,
+  #7c4dff22);
+
+  opacity:0;
+
+  transition:0.4s;
+}
+
+.project:hover::before{
+  opacity:1;
+}
+
+.project:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+
+.project h3{
+  margin-bottom:15px;
+  font-size:1.3rem;
+}
+
+/* ================= CONTACT ================= */
+
+/* ================= MODERN CONTACT SECTION ================= */
+
+.contact-form{
+  max-width:750px;
+  margin:auto;
+
+  padding:45px;
+
+  border-radius:35px;
+
+  background:rgba(255,255,255,0.07);
+
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.35),
+  0 0 30px rgba(255,78,205,0.12);
+
+  position:relative;
+
+  overflow:hidden;
+}
+
+/* GLOW EFFECT */
+
+.contact-form::before{
+  content:'';
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  background:linear-gradient(
+  45deg,
+  #ff4ecd55,
+  #7c4dff55,
+  #00e5ff55);
+
+  border-radius:50%;
+
+  top:-120px;
+  right:-120px;
+
+  filter:blur(80px);
+
+  z-index:0;
+}
+
+/* KEEP CONTENT ABOVE GLOW */
+
+.contact-form *{
+  position:relative;
+  z-index:2;
+}
+
+/* INPUTS */
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+
+  padding:20px;
+
+  margin-bottom:22px;
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  background:rgba(255,255,255,0.06);
+
+  color:white;
+
+  font-size:1rem;
+  font-family:'Outfit',sans-serif;
+
+  transition:0.4s;
+
+  outline:none;
+}
+
+/* PLACEHOLDER */
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:#cbd5e1;
+}
+
+/* FOCUS EFFECT */
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+  border:1px solid #ff4ecd;
+
+  background:rgba(255,255,255,0.09);
+
+  box-shadow:
+  0 0 15px rgba(255,78,205,0.25);
+}
+
+/* TEXTAREA */
+
+.contact-form textarea{
+  min-height:180px;
+  resize:none;
+}
+
+/* BUTTON */
+
+.contact-form button{
+
+  width:100%;
+
+  padding:18px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:linear-gradient(
+  45deg,
+  #ff4ecd,
+  #7c4dff);
+
+  color:white;
+
+  font-size:1rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  transition:0.4s;
+
+  box-shadow:
+  0 10px 25px rgba(255,78,205,0.25);
+}
+
+.contact-form button:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:
+  0 15px 35px rgba(255,78,205,0.45);
+}
+@media(max-width:768px){
+
+  .header{
+    padding:18px 25px;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav-links{
+    gap:1.2rem;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero-text h2{
+    font-size:3rem;
+  }
+
+  .section-title{
+    font-size:2.4rem;
+  }
+
+  .hero-img img{
+    width:300px;
+  }
+
+  .animated-circle{
+    width:320px;
+    height:320px;
+  }
+}
+.footer{
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">Alishba Zafar</h1>
+    </div>
+   <nav>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <section class="hero section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h2>Hi, I'm Alishba Zafar</h2>
+        <p>Web Developer & AI Enthusiast</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/alishba-zafar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Lishay0018" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="hero-img">
+
+  <div class="animated-circle"></div>
+
+  <img src="https://cdni.iconscout.com/illustration/premium/thumb/female-web-developer-working-on-project-3839572-3202877.png" alt="Coder Girl">
+
+</div>
+    </div>
+  </section>
+
+<section id="about" class="section"><br><br><br>
+  <h2>About Me</h2>
+
+  <div class="about-text">
+    <p>
+      I am a passionate and detail-oriented developer specializing in Artificial Intelligence, Machine Learning,
+      and full-stack web development. I focus on building intelligent, real-world solutions that combine clean UI,
+      strong backend logic, and modern AI technologies.
+    </p>
+
+    <p>
+      My experience includes working with computer vision systems, predictive models, and interactive web applications.
+      I enjoy transforming complex problems into simple, efficient, and user-friendly digital solutions.
+    </p>
+
+    <p>
+      I continuously explore emerging technologies to improve my skills and create impactful projects that solve real-life challenges.
+    </p>
+  </div>
+</section>
+
+ <!-- SKILLS -->
+<section id="skills" class="section">
+  <h2>Skills Dashboard</h2>
+
+  <div class="skills-wrapper">
+
+    <!-- Frontend -->
+    <div class="skill-box">
+      <h3>Frontend</h3>
+
+      <div class="skill"><span>HTML</span>
+        <div class="bar"><div style="width:95%"></div></div>
+      </div>
+
+      <div class="skill"><span>CSS</span>
+        <div class="bar"><div style="width:90%"></div></div>
+      </div>
+
+      <div class="skill"><span>JavaScript</span>
+        <div class="bar"><div style="width:80%"></div></div>
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <div class="skill-box">
+      <h3>Backend</h3>
+
+      <div class="skill"><span>Python</span>
+        <div class="bar"><div style="width:88%"></div></div>
+      </div>
+
+      <div class="skill"><span>Flask</span>
+        <div class="bar"><div style="width:85%"></div></div>
+      </div>
+
+      <div class="skill"><span>MySQL</span>
+        <div class="bar"><div style="width:80%"></div></div>
+      </div>
+    </div>
+
+    <!-- AI / ML -->
+    <div class="skill-box">
+      <h3>AI / Machine Learning</h3>
+
+      <div class="skill"><span>TensorFlow</span>
+        <div class="bar"><div style="width:85%"></div></div>
+      </div>
+
+      <div class="skill"><span>Keras</span>
+        <div class="bar"><div style="width:83%"></div></div>
+      </div>
+
+      <div class="skill"><span>OpenCV</span>
+        <div class="bar"><div style="width:90%"></div></div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-box">
+      <h3>Tools & Design</h3>
+
+      <div class="skill"><span>Git/GitHub</span>
+        <div class="bar"><div style="width:85%"></div></div>
+      </div>
+
+      <div class="skill"><span>UI/UX</span>
+        <div class="bar"><div style="width:80%"></div></div>
+      </div>
+
+      <div class="skill"><span>Problem Solving</span>
+        <div class="bar"><div style="width:92%"></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project"><h3>Medical Expert System</h3><p>AI-based medical diagnosis using symptoms and image analysis. Built with Flask, TensorFlow, and OpenCV.</p></div>
+        <div class="project"><h3>AI-Based Gait Analysis App</h3><p>Monitors gait patterns and predicts fall risk using ML. Used for rehabilitation and patient tracking.</p></div>
+        <div class="project"><h3>Speech Emotion Recognition</h3><p>Detects emotions from audio using the RAVDESS dataset and MLPClassifier.</p></div>
+        <div class="project"><h3>MP3 Converter</h3><p>Web tool to convert audio/video files to MP3 using HTML5 and server-side Python.</p></div>
+        <div class="project"><h3>Design Template Website</h3><p>User/admin panel to manage image templates, carts, and live chat with login system.</p></div>
+        <div class="project"><h3>Fire Detection System</h3><p>Image-based fire detection using CNN and OpenCV. Alerts based on visual analysis.</p></div>
+        <div class="project"><h3>Voice Cloning App</h3><p>Helps non-speaking individuals by cloning voice in multiple languages using AI.</p></div>
+        <div class="project">
+      <h3>Driver Drowsiness Detection</h3>
+      <p>Real-time AI system that detects eye closure & alerts driver using alarm system.</p>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+     <form class="contact-form" action="https://formspree.io/f/xzdgekge" method="POST">
+
+  <input type="text" name="name" placeholder="Your Name" required>
+
+  <input type="email" name="email" placeholder="Your Email" required>
+
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <button type="submit">Send Message</button>
+
+</form>
+    </div>
+  </section>
+
+  <footer class="footer section">
+    <div class="container">
+      <p>&copy; 2025 Alishba Zafar | All Rights Reserved</p>
+    </div>
+  </footer>
+ <script>
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function () {
+  alert("Sending message...");
+});
+</script>
+</body>
+</html>
